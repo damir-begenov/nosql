@@ -8,6 +8,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.persistence.Column;
+import javax.persistence.Lob;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -22,8 +24,11 @@ public class User implements UserDetails {
     private boolean active;
     private String password;
     private String password2;
+    @Lob
+    private String resume;
 
     private Set<Role> roles;
+    @DBRef
     private List<News> news = new ArrayList<>();
     private LocalDateTime dateOfCreated;
 

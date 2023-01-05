@@ -48,7 +48,7 @@
 
 <div class="formes">
     <!--    action="/regis" method="POST" -->
-    <form class="regbox" action="/registration" method="POST" id="regbox">
+    <form class="regbox" action="/registration" method="POST" id="regbox" enctype="multipart/form-data">
         <h1 class="tittle">Registration Via Instagram</h1>
         <div class="row ">
             <div class="col-3 ">
@@ -97,6 +97,12 @@
             <div class="col-8 ">
                 <input type="text" id="password" name="numberPhone" required>
             </div>
+        </div>
+        <div class="custom-file mb-4">
+            <label class="custom-file-label"
+                   for="customFile" >Upload Resume:</label>
+            <input type="file" name="file" style="width: 100px" class="custom-file-input"
+                   id="customFile">
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
         <div class="confirm">

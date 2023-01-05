@@ -124,13 +124,18 @@
             </div>
         </div>
     <#else>
-        <h3 class="tt">Sorry, no vacancies that satisfy your requirements... Calm down and stay in bed</h3>
+        <h3 class="tt" style="margin-left: 114px; margin-top: 200px">Sorry, no vacancies that satisfy your requirements... Calm down and stay in bed</h3>
     </#list>
 
 </div>
 <div id="footer" class="container">
-
+        <footer class="py-3 my-4">
+            <p class="text-center text-muted">&copy;Copyright Ruda 2022. All Rights Reserved.</p>
+        </footer>
+    </div>
 </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script type="text/javascript">
     $(document).on('click', '.search-filter li', function (){

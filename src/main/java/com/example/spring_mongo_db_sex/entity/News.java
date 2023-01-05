@@ -34,6 +34,7 @@ public class News {
     private String description;
     private User user;
     private List<User> apply;
+    private LocalDateTime dateOfCreated;
 
     public User getUser(User user) {
         return this.user;

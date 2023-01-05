@@ -8,14 +8,17 @@
     <title>RUDA NEWS INFO</title>
 </head>
 <body>
+<hr>
+
+<div style="margin-top: 50px;margin-left: 200px">
 <h1>News info</h1>
-<b>Компания : </b>${newss.company}<br>
-<b>Описание : </b>${newss.description}<br>
-<b>Индустрия : </b>${newss.industry}<br>
-<b>Время работы : </b>${newss.time}<br>
-<b>Зарплата : </b>${newss.salary}<br>
-<b>Автор: <a href="/user/${newss.user.id}">${newss.user.email}</a><b></b></b>
-</form>
+<h1><b>Компания : </b>${newss.company}<br></h1>
+    <h1><b>Описание : </b>${newss.description}<br></h1>
+        <h1><b>Индустрия : </b>${newss.industry}<br></h1>
+            <h1><b>Время работы : </b>${newss.time}<br></h1>
+                <h1><b>Зарплата : </b>${newss.salary}<br></h1>
+                    <h1><b>Автор: </b>${newss.user.email}</h1>
+</div>
 
 <hr>
 </body>

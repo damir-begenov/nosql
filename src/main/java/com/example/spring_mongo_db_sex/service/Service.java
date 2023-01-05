@@ -5,11 +5,13 @@ import com.example.spring_mongo_db_sex.entity.User;
 import com.example.spring_mongo_db_sex.repo.NewsRepo;
 import com.example.spring_mongo_db_sex.repo.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.time.LocalDateTime;
 import java.util.*;
 
 @AllArgsConstructor
@@ -32,7 +34,7 @@ public class Service {
 
     public List<News> getAllNews(String job){
         if(job!=null) return newsRepo.findByJob(job);
-        return newsRepo.findAll();
+        return newsRepo.findAll(Sort.by(Sort.Order.desc("dateOfCreated")));
     }
 
     public News saveNews(Principal principal, News news, User user, MultipartFile file) {
@@ -46,6 +48,7 @@ public class Service {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        news.setDateOfCreated(LocalDateTime.now());
         news.setUser(getUserByPrincipal(principal));
         getUserByPrincipal(principal).setNews(Collections.singletonList(news));
         news.setApply(new ArrayList<User>());

@@ -128,7 +128,7 @@
         </div>
 
     <#else>
-        <h3 class="tt">Sorry, no vacancies that satisfy your requirements... Calm down and stay in bed</h3>
+        <h3 class="tt" style="margin-left: 114px; margin-top: 200px">Sorry, no vacancies that satisfy your requirements... Calm down and stay in bed</h3>
     </#list>
 </div>
 

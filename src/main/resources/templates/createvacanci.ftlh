@@ -11,43 +11,62 @@
     <title>createva</title>
 </head>
 <body>
-<nav>
-    <div class="logo">
-        <a href="/">RUDA</a>
-    </div>
-    <ul class="nav-links ">
-        <li>
+<div class="hero" >
+
+    <nav>
+        <div class="logo">
+            <a href="/">RUDA</a>
+        </div>
+        <ul class="nav-links ">
+            <li>
+                <#if user.email??>
+                    <a href="/createvacanci">Create Vacancy</a>
+                </#if>
+            </li>
+            <li>
+                <a href=" ">Freelance </a>
+            </li>
+            <li>
+                <a href="/help">Help </a>
+            </li>
+            <li>
+                <a href="/vacancies">Vacancies</a>
+            </li>
             <#if user.email??>
-                <a href="/createvacanci">Create Vacancy</a>
+                <li>
+                    <a href="/userNews">User News</a>
+                </li>
             </#if>
-        </li>
-        <li>
-            <a href=" ">Freelance </a>
-        </li>
-        <li>
-            <a href="/help">Help </a>
-        </li>
-        <li>
-            <a href="/vacancies">Vacancies</a>
-        </li>
-    </ul>
-    <ul class="nav-user ">
-        <li><a href=" ">Create resume</a></li>
-        <button class="login ">
-            <a href="/login">Log In</a>
-        </button>
-    </ul>
-    <div class="toggles ">
-        <div class="account ">
-            <i class="fa fa-user-o "></i>
+        </ul>
+        <ul class="nav-user ">
+            <#if user.email??>
+                <li>Имя Пользователя  <i>${user.email}</i></li>
+                <form action="/logout" method="post">
+                    <input type="hidden" name="_csrf" value="${_csrf.token}">
+                    <input type="submit" value="Выйти"/>
+                </form>
+                <#if user.isAdmin()>
+                    <a href="/admin">Admin Panel</a>
+                </#if>
+            <#else> <button class="login ">
+                <a href="/login">Log In</a>
+            </button>
+            </#if>
+
+        </ul>
+        </ul>
+        <div class="toggles ">
+            <div class="account ">
+                <i class="fa fa-user-o"></i>
+            </div>
+            <div class="burger ">
+                <div class="line1 "></div>
+                <div class="line2 "></div>
+                <div class="line3 "></div>
+            </div>
         </div>
-        <div class="burger ">
-            <div class="line1 "></div>
-            <div class="line2 "></div>
-            <div class="line3 "></div>
-        </div>
+    </nav>
     </div>
-</nav>
 
 
 <div class="formes">
@@ -124,11 +143,17 @@
                 <input type="number" id="salary" name="salary">
             </div>
         </div>
-        <div class="custom-file mb-4">
-            <input type="file" name="file" class="custom-file-input"
-                   id="customFile"> <label class="custom-file-label"
-                                           for="customFile">Product Image</label>
+        <div class="row ">
+            <div class="col-3 ">
+                <p class="labels">Product Image:</p>
+            </div>
+            <div class="col-8 ">
+                <input type="file" id="customFile" name="file"  required>
+                <label class="custom-file-label"
+                       for="customFile"></label>
+            </div>
         </div>
+
         <div class="row ">
             <div class="col-3 ">
                 <p class="labels">Number of Employees:</p>

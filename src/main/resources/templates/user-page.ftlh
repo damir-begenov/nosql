@@ -14,6 +14,8 @@ ${user.name}
     <div>
         ${user.email}
     </div>
+    <img src="data:image/jpeg;base64,${user.resume?if_exists}" alt="" style="width: 300px;display: flex">
+
 </div>
 </body>
 </html>

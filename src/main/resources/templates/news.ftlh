@@ -231,7 +231,7 @@
         <button type="button" class="button1">Submit</button>
     </div>
     <div class="containerr-2">
-        <img width="600px" class="chuvak" src="images/chuvak.png" alt="">
+        <img width="600px" style="margin-left: 200px;margin-top: 100px" class="chuvak" src="images/chuvak.png" alt="">
     </div>
     <h4 class="texttreg">✅ Free register</h4>      <h4 class="texttreg2">✅ Great Service</h4>
 
