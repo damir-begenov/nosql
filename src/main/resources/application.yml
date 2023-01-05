@@ -1,0 +1,5 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://damir:damir@cluster0.2x7c3hc.mongodb.net/?retryWrites=true&w=majority
+      database: damir
