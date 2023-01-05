@@ -10,7 +10,6 @@
 <body>
 ${user.name}
 <div>
-    gdfgf
     <div>
         ${user.email}
     </div>

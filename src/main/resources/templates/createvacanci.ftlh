@@ -40,7 +40,7 @@
         </ul>
         <ul class="nav-user ">
             <#if user.email??>
-                <li>Имя Пользователя  <i>${user.email}</i></li>
+                <li><a href="/user-page">${user.email}</a></li>
                 <form action="/logout" method="post">
                     <input type="hidden" name="_csrf" value="${_csrf.token}">
                     <input type="submit" value="Выйти"/>
